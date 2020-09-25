@@ -6,11 +6,7 @@ bot = telebot.TeleBot("1312025506:AAF5K4xuPAhocTp_QSqL2imsFmf03JyRR_A")
 def send_welcome(message):
 	bot.reply_to(message, "Howdy, how are you doing?")
 
-@bot.message_handler(func=lambda message: True)
-def echo_all(message):
-	bot.reply_to(message, message.text)
 
-bot.polling()
 
 
 
@@ -18,7 +14,6 @@ import datetime
 import time  
 timing = time.time()-45000 
 pollnumber=0
-bot = telebot.TeleBot('1312025506:AAF5K4xuPAhocTp_QSqL2imsFmf03JyRR_A')
 
 date_today=datetime.date.today() + datetime.timedelta(days=0) 
 date_tomorrow=datetime.date.today() + datetime.timedelta(days=1) 
