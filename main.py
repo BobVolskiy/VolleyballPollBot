@@ -50,7 +50,7 @@ def send_welcome(message):
                         bot.pin_chat_message(GROUP_ID, message.message_id+1)
                         timing = time.time() 
                         pollnumber = message.message_id+1 
-        bot.pin_chat_message(GROUP_ID, message.message_id+1)
+        bot.delete_message(GROUP_ID, message.message_id)  
 
 @bot.message_handler(commands=['volley_tomorrow'])
 def send_welcome(message):
@@ -65,7 +65,7 @@ def send_welcome(message):
                         bot.pin_chat_message(GROUP_ID, message.message_id+1)
                         timing = time.time()
                         pollnumber = message.message_id+1
-        bot.pin_chat_message(GROUP_ID, message.message_id+1)
+        bot.delete_message(GROUP_ID, message.message_id)  
 
 @bot.message_handler(commands=['volley_dayafter'])
 def send_welcome(message):
@@ -80,6 +80,6 @@ def send_welcome(message):
                         bot.pin_chat_message(GROUP_ID, message.message_id+1)
                         timing = time.time()
                         pollnumber = message.message_id+1
-        bot.pin_chat_message(GROUP_ID, message.message_id+1)
+        bot.delete_message(GROUP_ID, message.message_id)  
                 
 bot.polling() 
