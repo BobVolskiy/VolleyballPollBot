@@ -1,7 +1,5 @@
 import telebot
-
-bot = telebot.TeleBot("1312025506:AAF5K4xuPAhocTp_QSqL2imsFmf03JyRR_A")
-
+bot = telebot.TeleBot("1381051273:AAHATq_xhk-piS6dU2Txv2P6POGor5pNoOs")
 import datetime
 import time  
 timing = time.time()-45000 
