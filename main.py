@@ -13,10 +13,6 @@ question_tomorrow = "Волейбол "+str(date_tomorrow.day)+"."+str(date_tomo
 question_dayafter = "Волейбол "+str(date_dayafter.day)+"."+str(date_dayafter.strftime("%m"))+" ("+date_dayafter.strftime("%a")+")?" 
 options = ["Да", "50/50", "Нет"]
 
-
-
-
-
 @bot.message_handler(commands=['dellpoll']) 
 def send_welcome(message): 
         MEMBER_ID = message.from_user.id  
