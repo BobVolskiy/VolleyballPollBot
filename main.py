@@ -13,8 +13,6 @@ question_tomorrow = "Волейбол "+str(date_tomorrow.day)+"."+str(date_tomo
 question_dayafter = "Волейбол "+str(date_dayafter.day)+"."+str(date_dayafter.strftime("%m"))+" ("+date_dayafter.strftime("%a")+")?" 
 options = ["Да", "50/50", "Нет"]
 
-
-
 @bot.message_handler(commands=['dellpoll']) 
 def send_welcome(message): 
         MEMBER_ID = message.from_user.id  
@@ -27,8 +25,6 @@ def send_welcome(message):
                         pollnumber=0
         bot.delete_message(GROUP_ID, message.message_id) 
 
-
-
 @bot.message_handler(commands=['delltime'])
 def send_welcome(message):
         MEMBER_ID = message.from_user.id
@@ -39,8 +35,7 @@ def send_welcome(message):
                 if timing>600: 
                         timing=0 
                         bot.send_message(GROUP_ID, 'Куллдаун сброшен')
-        bot.delete_message(GROUP_ID, message.message_id)
-            
+        bot.delete_message(GROUP_ID, message.message_id)    
 
 @bot.message_handler(commands=['volley_today'])
 def send_welcome(message):
@@ -58,7 +53,6 @@ def send_welcome(message):
         else:
                 bot.delete_message(GROUP_ID, message.message_id)
 
-
 @bot.message_handler(commands=['volley_tomorrow'])
 def send_welcome(message):
         MEMBER_ID = message.from_user.id
@@ -75,7 +69,6 @@ def send_welcome(message):
         else:
                 bot.delete_message(GROUP_ID, message.message_id)
 
-
 @bot.message_handler(commands=['volley_dayafter'])
 def send_welcome(message):
         MEMBER_ID = message.from_user.id
@@ -91,6 +84,5 @@ def send_welcome(message):
                         bot.delete_message(GROUP_ID, message.message_id)
         else:
                 bot.delete_message(GROUP_ID, message.message_id)
-
-
+                
 bot.polling() 
