@@ -2,14 +2,6 @@ import telebot
 
 bot = telebot.TeleBot("1312025506:AAF5K4xuPAhocTp_QSqL2imsFmf03JyRR_A")
 
-@bot.message_handler(commands=['start', 'help'])
-def send_welcome(message):
-	bot.reply_to(message, "Howdy, how are you doing?")
-
-
-
-
-
 import datetime
 import time  
 timing = time.time()-45000 
@@ -103,4 +95,4 @@ def send_welcome(message):
                 bot.delete_message(GROUP_ID, message.message_id)
 
 
-bot.polling() # я не знаю что это но без этого бот не выводит сообщения
+bot.polling() 
