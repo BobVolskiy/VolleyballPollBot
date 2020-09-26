@@ -29,7 +29,6 @@ def start(message):
 
 @bot.callback_query_handler(func=lambda call: True)
 def query_handler(call):
-        key = telebot.types.InlineKeyboardMarkup()
         if call.data == 'to1':
                 bot.answer_callback_query(callback_query_id=call.id, text='Создан опрос на сегодня')
                 bot.delete_message(GROUP_ID, kid)
@@ -43,8 +42,6 @@ def query_handler(call):
                 bot.delete_message(GROUP_ID, kid)
                 volley_to3()
 
-
-# ----- #  
 
 def volley_to1():
         global timing
