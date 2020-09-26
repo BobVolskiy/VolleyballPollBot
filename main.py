@@ -1,11 +1,9 @@
 import telebot
 import datetime
 import time  
-import locale
 timing = time.time()-45000 
 bot = telebot.TeleBot("1381051273:AAHATq_xhk-piS6dU2Txv2P6POGor5pNoOs")
 options = ["Да", "50/50", "Нет"]
-locale.setlocale(locale.LC_ALL, "ru") 
 
 
 def rtoday(): 
