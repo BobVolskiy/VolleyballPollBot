@@ -11,17 +11,17 @@ locale.setlocale(locale.LC_ALL, "ru")
 def rtoday(): 
         date_today=datetime.date.today() + datetime.timedelta(days=0) 
         global question_today
-        question_today = "Волейбол сегодня "+str(date_today.day)+"."+str(date_today.strftime("%m"))+" ("+date_today.strftime("%a")+")?"
+        question_today = "Волейбол сегодня "+str(date_today.day)+"."+str(date_today.strftime("%m"))+" ("+date_today.strftime("%A")+")?"
 
 def rtomorrow():
         date_tomorrow=datetime.date.today() + datetime.timedelta(days=1) 
         global question_tomorrow
-        question_tomorrow = "Волейбол завтра "+str(date_tomorrow.day)+"."+str(date_tomorrow.strftime("%m"))+" ("+date_tomorrow.strftime("%a")+")?"
+        question_tomorrow = "Волейбол завтра "+str(date_tomorrow.day)+"."+str(date_tomorrow.strftime("%m"))+" ("+date_tomorrow.strftime("%A")+")?"
 
 def rdayafter(): 
         date_dayafter=datetime.date.today() + datetime.timedelta(days=2) 
         global question_dayafter
-        question_dayafter = "Волейбол послезавтра "+str(date_dayafter.day)+"."+str(date_dayafter.strftime("%m"))+" ("+date_dayafter.strftime("%a")+")?" 
+        question_dayafter = "Волейбол послезавтра "+str(date_dayafter.day)+"."+str(date_dayafter.strftime("%m"))+" ("+date_dayafter.strftime("%A")+")?" 
 
 @bot.message_handler(commands=['cooldown'])
 def send_welcome(message):
