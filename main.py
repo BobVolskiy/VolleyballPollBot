@@ -91,5 +91,11 @@ def send_welcome(message):
                         bot.send_message(GROUP_ID, 'Куллдаун сброшен')
         bot.delete_message(GROUP_ID, message.message_id)    
 
+
+@bot.message_handler(content_types=["new_chat_members"])
+def handler_new_member(message):
+    user_name = message.new_chat_members[0].first_name
+    bot.send_message(message.chat.id, "Добро пожаловать, {0}!".format(user_name))   
+        
  
 bot.polling() 
