@@ -4,7 +4,7 @@ import datetime
 import time  
 timing = time.time()-45000 
 bot = telebot.TeleBot("1381051273:AAHATq_xhk-piS6dU2Txv2P6POGor5pNoOs")
-options = ["Да", "50/50", "Нет"]
+options = ["Могу", "50/50", "Не смогу"]
 
 @bot.message_handler(commands=['sendpoll'])
 def start(message):
