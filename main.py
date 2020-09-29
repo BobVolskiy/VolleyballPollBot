@@ -17,7 +17,6 @@ def weather(message):
         GROUP_ID = message.chat.id
         place = owm.weather_at_place('Kyiv')
         wt = place.get_weather()
-
         if time.time() - cooldown > 120:  
                 bot.send_message(GROUP_ID, 'Сегодня '+wt.get_detailed_status()+'\n'+str(round(wt.get_temperature('celsius')['temp']))+"°C🌡")
                 cooldown = time.time()
@@ -89,7 +88,6 @@ def volley_to2():
         rtomorrow()
         if MEMBER_RANK=="creator" or MEMBER_RANK=="administrator":
                 bot.send_poll(chat_id=GROUP_ID, question=question_tomorrow, options = options, is_anonymous=False)
-                bot.send_message(GROUP_ID, 'Завтра '+wtm.detailed_status+'.\n'+str(round(wtm.temperature('celsius')['temp']))+'°С 🌡')
 def rtomorrow():
         date_tomorrow=datetime.date.today() + datetime.timedelta(days=1) 
         global question_tomorrow
