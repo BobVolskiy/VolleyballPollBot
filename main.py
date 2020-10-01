@@ -11,6 +11,7 @@ options = ["Могу", "50/50", "Не смогу"]
 owm = OWM('c30a0f10eeb9a93501989842cfd6bb23', language = "RU")
 cooldown = time.time()-120
 
+
 @bot.message_handler(commands=['weather'])
 def weather(message):
         global cooldown
