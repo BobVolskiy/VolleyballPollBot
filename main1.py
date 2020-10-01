@@ -14,18 +14,19 @@ cooldownnastya = time.time()-3000
 @bot.message_handler(commands=['callfornastya'])
 def callfornashya(message):
         global cooldownnastya
+        MEMBER_ID = message.from_user.id
         GROUP_ID = message.chat.id
+        name = message.from_user.first_name
         i=0
         if time.time() - cooldownnastya > 120:  
+                bot.send_message(GROUP_ID, name+' ВЫЗЫВАЕТ НАСТЮ!')
                 while(i<5):
                         bot.send_message(GROUP_ID, '@rwwct')
                         time.sleep(1)
                         i+=1
                 cooldownnastya=time.time()
-                bot.send_message(GROUP_ID, 'Куллдаун...')
 
-        
-
+      
 
 @bot.message_handler(commands=['weather'])
 def weather(message):
