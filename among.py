@@ -7,10 +7,11 @@ cooldown = time.time()-600
 def amongus(message):
         global cooldown
         GROUP_ID = message.chat.id
+        cooldown{GROUP_ID}
         name = message.from_user.first_name
         if time.time() - cooldown > 600:  
                 bot.send_sticker(GROUP_ID,'CAACAgEAAxkBAAEBZrxfdlrV2gUdNBh_sdOQ9nqOK9wlogACRgADnjOcH9odHIXtfgmvGwQ')
-                bot.send_message(GROUP_ID, name+' призывает всех поиграть в Among Us!\n\nЗаходи в голосовой канал, ссылка на игру будет в чате --> https://discord.gg/Z3rKddR')
+                bot.send_message(GROUP_ID, '**'+name+'** призывает всех поиграть в **Among Us**!\n\nЗаходи в голосовой канал, ссылка на игру будет в чате --> https://discord.gg/Z3rKddR')
                 cooldown=time.time()  
 
 bot.polling() 
