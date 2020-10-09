@@ -39,6 +39,8 @@ def start(message):
         MEMBER_ID = message.from_user.id
         GROUP_ID = message.chat.id
         MEMBER_RANK = bot.get_chat_member(GROUP_ID, MEMBER_ID).status
+        global pinpoll 
+        pinpoll = message.message_id+2
         if time.time() - timing > 43200:  
                 markup = telebot.types.InlineKeyboardMarkup(row_width=3)
                 to1 = telebot.types.InlineKeyboardButton(text='Сегодня', callback_data='to1')
@@ -73,6 +75,7 @@ def volley_to1():
         if MEMBER_RANK=="creator" or MEMBER_RANK=="administrator":
                 bot.send_poll(chat_id=GROUP_ID, question=question_today, options = options, is_anonymous=False) 
                 bot.send_message(GROUP_ID, 'Сегодня '+wt.get_detailed_status()+'\n'+str(round(wt.get_temperature('celsius')['temp']))+"°C🌡")
+                bot.pin_chat_message(GROUP_ID, pinpoll)
                 
 def rtoday(): 
         date_today=datetime.date.today() + datetime.timedelta(days=0) 
@@ -89,6 +92,7 @@ def volley_to2():
         rtomorrow()
         if MEMBER_RANK=="creator" or MEMBER_RANK=="administrator":
                 bot.send_poll(chat_id=GROUP_ID, question=question_tomorrow, options = options, is_anonymous=False)
+                bot.pin_chat_message(GROUP_ID, pinpoll)
 def rtomorrow():
         date_tomorrow=datetime.date.today() + datetime.timedelta(days=1) 
         global question_tomorrow
@@ -102,6 +106,7 @@ def volley_to3():
         rdayafter()
         if MEMBER_RANK=="creator" or MEMBER_RANK=="administrator":
                 bot.send_poll(chat_id=GROUP_ID, question=question_dayafter, options = options, is_anonymous=False)
+                bot.pin_chat_message(GROUP_ID, pinpoll)
 def rdayafter(): 
         date_dayafter=datetime.date.today() + datetime.timedelta(days=2) 
         global question_dayafter
