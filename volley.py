@@ -5,7 +5,7 @@ import time
 from pyowm import OWM
 timing = time.time()-45000 
 bot = telebot.TeleBot("1381051273:AAHATq_xhk-piS6dU2Txv2P6POGor5pNoOs")
-options = ["Могу", "50/50", "Не смогу"]
+options = ["Я пойду", "Не пойду"]
 
 
 owm = OWM('c30a0f10eeb9a93501989842cfd6bb23', language = "RU")
